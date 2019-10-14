@@ -39,6 +39,9 @@ development:
 
 production:
   <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: mygear_production
   username: mygear
   password: <%= ENV['MESSAGE-BOARD_DATABASE_PASSWORD'] %>
