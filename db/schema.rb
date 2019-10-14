@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_02_052215) do
+ActiveRecord::Schema.define(version: 2019_10_13_054230) do
 
   create_table "favorite_posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -29,6 +29,15 @@ ActiveRecord::Schema.define(version: 2019_10_02_052215) do
     t.index ["follow_id"], name: "index_follow_users_on_follow_id"
     t.index ["user_id", "follow_id"], name: "index_follow_users_on_user_id_and_follow_id", unique: true
     t.index ["user_id"], name: "index_follow_users_on_user_id"
+  end
+
+  create_table "gears", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "code"
+    t.string "name"
+    t.string "url"
+    t.string "image_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

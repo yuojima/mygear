@@ -1,0 +1,12 @@
+<div class="row no-gutters">
+    <div class="card-columns">
+      <% users.each do |user| %> 
+        <div class="card mb-4" style = 'border:none;'> 
+          <div class="text-center">
+            <%= link_to image_tag(user.img.to_s, :class => "image-round-md mb-2", :style => ""), user_path(user) %>
+            <p><%= user.name %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+</div>

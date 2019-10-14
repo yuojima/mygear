@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :user
-  
-  validates :comment, presence: true, length: { maximum: 255 }
+  validates :img, presence: true
+  validates :comment, presence: false, length: { maximum: 255 }
 
   mount_uploader :img, ImageUploader
   

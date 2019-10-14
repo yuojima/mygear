@@ -26,6 +26,11 @@
         <%= f.label :password_confirmation, 'Confirmation' %>
         <%= f.password_field :password_confirmation, class: 'form-control' %>
       </div>
+      
+      <div class="form-group">
+        <%= f.label :img, 'Profile' %>
+        <%= f.file_field :img %>
+      </div>
 
       <%= f.submit 'Sign up', class: 'btn btn-primary btn-block' %>
     <% end %>

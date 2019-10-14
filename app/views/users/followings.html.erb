@@ -3,7 +3,7 @@
     <div class="col-md-4 justify-content-center mb-5">
       <img class="image-round"<%= image_tag @user.img.to_s %>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-4">
       <p><%= @user.name %></p>
       <p><%= render 'follow_users/follow_button', user: @user %></p>
     </div>
@@ -13,7 +13,7 @@
         <li class="nav-item"><a href="<%= followings_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followings_user_path(@user)) %>">Followings  <span class="badge badge-secondary"><%= @count_followings %></span></a></li>
         <li class="nav-item"><a href="<%= followers_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followers_user_path(@user)) %>">Followers  <span class="badge badge-secondary"><%= @count_followers %></span></a></li>
       </ul>
-      <%= render 'posts/posts', posts: @posts %>
+      <%= render 'users/users', users: @followings %>
     </div>
   </div>
 </div>
